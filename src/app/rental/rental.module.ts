@@ -9,12 +9,13 @@ import { RentalComponent } from './rental.component';
 import { RentalSevice } from './shared/rental.sevice';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 
+
 const routes: Routes = [
     { path:'rentals',
         component: RentalComponent,
         children: [
             {path: '', component: RentalListComponent },
-            {path: 'rentalId', component: RentalDetailComponent }
+            {path: ':rentalId', component: RentalDetailComponent }
         ]
     }
 ]
@@ -29,7 +30,6 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes)
-
     ],
     providers: [RentalSevice]
 })
